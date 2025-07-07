@@ -1,0 +1,125 @@
+
+:root{
+  --clr-bg:#1b1b1b;
+  --clr-text:#dedede;
+  --clr-hover:#000;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{padding-top:80px;
+  background:var(--clr-bg);
+  color:var(--clr-text);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  line-height:1.4;
+}
+
+/* Header */
+header{position:absolute;top:0;left:0;width:100%;height:80px;display:flex;justify-content:center;align-items:center;background:transparent; z-index:10;}
+
+nav{
+  display:flex;
+  gap:40px;
+}
+
+nav a{
+  color:var(--clr-text);
+  text-decoration:none;
+  font-size:18px;
+}
+
+nav a:hover{
+  color:var(--clr-hover);
+}
+
+/* Home fullscreen slider */
+.fullscreen{position:relative;height:100vh;overflow:hidden;}
+
+.fullscreen img{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:100%;
+  height:100%;
+  object-fit:cover;  /* Show full image */
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.fullscreen img.active{opacity:1;}
+
+.slider-btn{
+  position:absolute;
+  top:50%;transform:translateY(-50%);
+  background:rgba(0,0,0,.3);
+  border:none;
+  color:var(--clr-text);
+  font-size:32px;
+  padding:4px 14px;
+  cursor:pointer;z-index:5;
+}
+
+.slider-btn.prev{left:10px;}
+.slider-btn.next{right:10px;}
+.slider-btn:hover{background:rgba(0,0,0,.6);}
+
+/* Works page */
+.subnav{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  
+}
+
+.subnav a{
+  color:var(--clr-text);
+  text-decoration:none;
+  font-size:20px;
+}
+
+.subnav a.active,
+.subnav a:hover{color:var(--clr-hover);}
+
+/* Masonry Gallery */
+.gallery{
+  column-count:4;
+  column-gap:16px;
+  padding:20px;
+}
+
+.gallery a{display:inline-block;width:100%;margin-bottom:16px;}
+.gallery img{
+  width:100%;
+  height:auto;
+  border-radius:4px;
+}
+
+@media(max-width:1200px){.gallery{column-count:3;}}
+@media(max-width:768px){.gallery{column-count:2;}}
+@media(max-width:500px){.gallery{column-count:1;}}
+
+/* Contact */
+.contact-container{
+  max-width:900px;
+  margin:120px auto 0;
+  display:flex;
+  gap:40px;
+  align-items:flex-start;
+}
+
+.contact-container img{
+  width:260px;
+  height:auto;
+  border-radius:4px;
+}
+
+.socials{
+  display:flex;
+  gap:16px;
+  margin-top:12px;
+}
+.socials a{color:var(--clr-text);}
+.socials a:hover{color:var(--clr-hover);}
+
+.socials svg{width:28px;height:28px;fill:currentColor;}
